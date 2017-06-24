@@ -1,0 +1,9 @@
+certs
+csr
+intermediate
+newcerts
+index.*
+private
+serial*
+openssl.cnf
+
