@@ -50,11 +50,11 @@ emailAddress                    = Email Address
 
 # Optionally, specify some defaults.
 countryName_default             = DE
-stateOrProvinceName_default     = Germany
-localityName_default            = Schleswig-Holstein
-0.organizationName_default      = d4vid
+stateOrProvinceName_default     = Hamburg
+localityName_default            = Hamburg
+0.organizationName_default      = Example Ltd
 #organizationalUnitName_default  =
-emailAddress_default            = root@d4v1d.eu
+emailAddress_default            = root@example.com
 
 [ v3_ca ]
 # Extensions for a typical CA (`man x509v3_config`).
