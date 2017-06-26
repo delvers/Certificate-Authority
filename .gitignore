@@ -6,4 +6,4 @@ index.*
 private
 serial*
 openssl.cnf
-
+etc/shared.cnf
