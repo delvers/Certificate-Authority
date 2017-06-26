@@ -35,6 +35,7 @@
   - intermediate/private/*.key.pem
 
 ## ToDo
+- Replace absolute directory paths
 - Support multiple intermediate certificates
 - Support creation of client certificates
 - Support certs without passwords
