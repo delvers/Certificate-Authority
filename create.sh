@@ -179,6 +179,10 @@ function create_intermediate {
     create_intermediate_cert
   fi
 
+  if [[ -f ./intermediate/certs/ca-chain.cert.pem ]]
+  then
+    chmod +w ./intermediate/certs/ca-chain.cert.pem
+  fi
   cat ./intermediate/certs/intermediate.cert.pem \
         ./certs/ca.cert.pem > ./intermediate/certs/ca-chain.cert.pem
   chmod 444 ./intermediate/certs/ca-chain.cert.pem
@@ -294,18 +298,23 @@ function create_certificat {
 
 function main {
   init_ca
+  init_intermediate
   case "$1" in
     ca)
       create_ca
       ;;
     intermediate)
-      init_intermediate
       create_intermediate
       ;;
     cert)
       if [[ -e ./intermediate ]]
       then
-        create_certificat $2
+        if [ -z "$2" ]
+        then
+          echo "Please provide a <domain> or <email> as param for cert"
+        else
+          create_certificat $2
+        fi
       else
         echo "Maybe you should create a intermediate certificate by ~# ./create.sh intermediate"
       fi
